@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='us-ascii'?> 
+<engrteams>
+	<!-- TEAMS IN ALPHABETICAL ORDER -->
+	<team>
+		<teamname>AERO</teamname>
+		<description>AERO develops Autonomous Unmanned Aerial Vehicles (UAV).</description>
+		<logourl>./logos/aero.png</logourl>
+		<siteurl>http://uvicaero.ca/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+	<team>
+		<teamname>AUVic</teamname>
+		<description>AUVic develops autonomous and remotely operated submersible vehicles.</description>
+		<logourl>./logos/auvic_logo.png</logourl>
+		<siteurl>http://auvic.uvic.ca/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+	<team>
+		<teamname>Ecocar</teamname>
+		<description></description>
+		<logourl>./logos/ecocar_logo.png</logourl>
+		<siteurl>http://ecocar.uvic.ca/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+	<team>
+		<teamname>ECOSat</teamname>
+		<description>ECOSat designs and constructs satellites.</description>
+		<logourl>./logos/ecosat.png</logourl>
+		<siteurl>http://www.csdc.uvic.ca/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+	<team>
+		<teamname>FSAE</teamname>
+		<description></description>
+		<logourl>./logos/fsae.png</logourl>
+		<siteurl>http://fsae.uvic.ca/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+	<team>
+		<teamname>IGVT</teamname>
+		<description></description>
+		<logourl>./logos/igvtlogo.png</logourl>
+		<siteurl>http://www.web.uvic.ca/~uvicigvt/</siteurl>
+		<backgroundimage></backgroundimage>
+	</team>
+</engrteams>

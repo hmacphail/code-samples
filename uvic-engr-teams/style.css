@@ -1,0 +1,96 @@
+body {
+	font-family: "Open Sans";
+	color:#333;
+	margin:20px;
+}
+
+img {
+	max-width: 400px;
+}
+
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+}
+
+.panel-header
+{
+	background-repeat: repeat-x;
+	color: #fff;
+	background-color: #f5f5f5;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ddd;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.panel-content {
+	padding: 15px;
+}
+
+
+/* Outermost div */
+#panel-main {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#panel-main-header {
+	font-size: 24px;
+	background-image: linear-gradient(to bottom,#fa792d 0,#ed5c06 100%);
+}
+
+
+/* Menu bar */
+#panel-navigation-header {
+	display: table;
+	width: 100%;
+	padding: 0px;
+	background-image: linear-gradient(to bottom,#428bca 0,#2d6ca2 100%);
+}
+
+#panel-navigation-header a {
+	display: table-cell;
+	white-space: nowrap;
+	font-size: 16px;
+	padding: 10px 25px;
+	cursor: pointer;
+	border-right: 1px solid #2a6496;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+
+#panel-navigation-header a:hover {
+	background-color:#2a6496;
+}
+
+#panel-navigation-header a:first-child {
+	border-left: medium none;
+	border-top-left-radius: 4px;
+}
+
+#panel-navigation-header a:last-child {
+	border-top-right-radius: 4px;
+}
+
+#panel-navigation-header a.current {
+	background-color: #193c5a !important;
+	text-shadow: none;
+	box-shadow: 1px 2px 6px #070707 inset;
+}
+
+
+/* Team Link Content Section (photo and description) */
+#panel-navigation-content {
+	padding: 25px;
+	min-height: 400px;
+}
+
+#panel-navigation-content .hide {
+	display: none;
+}

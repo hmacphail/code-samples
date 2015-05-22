@@ -1,0 +1,33 @@
+@import "../-variables";
+@import "../../bootstrap-source/less/variables";
+@import "../../bootstrap-source/less/mixins.less";
+
+[data-am-page='industries'] {
+    #ChartRegionalMap {
+        float: left;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        
+        .region {
+            stroke: black;
+            position: relative;
+        }
+        .region:hover {
+            fill: @brand-shock;
+        }
+
+        .background {
+            fill: none;
+            pointer-events: all;
+        }
+
+        .lowest {
+            fill: @brand-bg-dark !important;
+            display: block !important;
+        }
+        
+        .active {
+            display: none;
+        }
+    }
+}

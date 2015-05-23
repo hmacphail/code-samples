@@ -25,6 +25,7 @@
   padding: 12px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.9;
 }
 #mainDiv > div {
   position: absolute;
@@ -55,7 +56,7 @@
 }
 @media (min-width: 600px) {
   #mainDiv > div {
-    right: 125px !important;
+    right: 125px;
   }
 }
 @media (min-width: 380px) {

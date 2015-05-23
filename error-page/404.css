@@ -1,0 +1,65 @@
+﻿body {
+  font-family: 'Open Sans';
+  text-align: center;
+  margin: 0px;
+  background-image: url('furley_bg.png');
+}
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+}
+
+#mainDiv {
+  background-image: url('forest_bkgd.jpg');
+  position: relative;
+  width: 100%;
+}
+#mainDiv img {
+  display: block;
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mainDiv > div {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+}
+#footerDiv {
+  padding-top: 20px;
+}
+
+#errorHeading {
+  font-size: 60pt;
+  font-weight: bold;
+}
+#errorMessage {
+  font-size: 15pt;
+}
+
+@media (min-width: 1150px) {
+  #mainDiv {
+    background-size: 100%;
+  }
+}
+@media (min-width: 840px) {
+  #mainDiv > div {
+    right: 200px !important;
+  }
+}
+@media (min-width: 600px) {
+  #mainDiv > div {
+    right: 125px !important;
+  }
+}
+@media (min-width: 380px) {
+  #errorHeading {
+    margin: 0 0 -20px -230px;
+  }
+}

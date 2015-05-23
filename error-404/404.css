@@ -19,6 +19,7 @@
   background-image: url('forest_bkgd.jpg');
   position: relative;
   width: 100%;
+  color: #e5e5e5;
 }
 #mainDiv img {
   display: block;

@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 32px/32px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #ccc;
+  background: white;
+}
+
+#main {
+  width: 75%;
+  margin: 10px 10px;
+  padding: 0 0 10px 0;
+  z-index: 999999;
+  position: absolute;
+  left: 60px;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+a:hover {
+  color: #7fd4f7;
+  opacity: 0.8;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: decimal-leading-zero;
+}
+li span {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#share {
+	font-size: 24px;
+}
+.i-mail:hover {
+	color: #dc0000;
+}
+.i-linkedin:hover {
+	color: #0073b2;
+}
+.i-github-5:hover {
+	color: #333333;
+}
+.i-facebook-2:hover {
+	color: #43609c;
+}
+.i-pinterest-2:hover {
+	color: #d01d15;
+}

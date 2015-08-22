@@ -18,7 +18,10 @@ var stickyHeaders = (function() {
               .height(thisSticky.outerHeight());             
       });
 
-      window_obj.on("scroll touchmove", _whenScrolling);
+      window_obj.on("scroll touchmove", function(e) {
+        console.log(e);
+        _whenScrolling();
+      });
       //window_obj.off("scroll.stickies").on("scroll.stickies", function() {
       //    _whenScrolling();     
       //});

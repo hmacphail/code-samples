@@ -1,6 +1,6 @@
 var stickyHeaders = (function() {
 
-  var window_obj = jQuery(window); 
+  var document_obj = jQuery(document); 
   var stickies_obj;
 
   var load = function(stickies) {
@@ -18,11 +18,11 @@ var stickyHeaders = (function() {
               .height(thisSticky.outerHeight());             
       });
 
-      window_obj.on("scroll touchmove", function(e) {
+      document_obj.on("scroll touchmove", function(e) {
         console.log(e);
         _whenScrolling();
       });
-      //window_obj.off("scroll.stickies").on("scroll.stickies", function() {
+      //document_obj.off("scroll.stickies").on("scroll.stickies", function() {
       //    _whenScrolling();     
       //});
     }
@@ -35,7 +35,7 @@ var stickyHeaders = (function() {
       var thisSticky = jQuery(this),
           stickyPosition = thisSticky.data('originalPosition');
 
-      if (stickyPosition <= window_obj.scrollTop()) {        
+      if (stickyPosition <= document_obj.scrollTop()) {        
         
         var nextSticky = stickies_obj.eq(i + 1),
             nextStickyPosition = nextSticky.data('originalPosition') - thisSticky.data('originalHeight');
@@ -43,8 +43,8 @@ var stickyHeaders = (function() {
         thisSticky.addClass("fixed");
 
         if (nextSticky.length > 0 && thisSticky.offset().top >= nextStickyPosition) {
-
-          thisSticky.addClass("absolute").css("top", nextStickyPosition);
+          thisSticky.addClass("absolute").css("transform", "translate(0," + (nextStickyPosition) + "px)");
+          //thisSticky.addClass("absolute").css("top", nextStickyPosition);
         }
 
       } else {
@@ -53,7 +53,7 @@ var stickyHeaders = (function() {
 
         thisSticky.removeClass("fixed");
 
-        if (prevSticky.length > 0 && window_obj.scrollTop() <= thisSticky.data('originalPosition') - thisSticky.data('originalHeight')) {
+        if (prevSticky.length > 0 && document_obj.scrollTop() <= thisSticky.data('originalPosition') - thisSticky.data('originalHeight')) {
 
           prevSticky.removeClass("absolute").removeAttr("style");
         }

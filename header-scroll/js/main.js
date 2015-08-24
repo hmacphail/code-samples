@@ -1,6 +1,6 @@
 var stickyHeaders = (function() {
 
-  var document_obj = jQuery(document); 
+  var window_obj = jQuery(window); 
   var stickies_obj;
 
   var load = function(stickies) {
@@ -18,11 +18,11 @@ var stickyHeaders = (function() {
               .height(thisSticky.outerHeight());             
       });
 
-      document_obj.on("scroll touchmove", function(e) {
+      window_obj.on("scroll", function(e) {
         console.log(e);
         _whenScrolling();
       });
-      //document_obj.off("scroll.stickies").on("scroll.stickies", function() {
+      //window_obj.off("scroll.stickies").on("scroll.stickies", function() {
       //    _whenScrolling();     
       //});
     }
@@ -35,7 +35,7 @@ var stickyHeaders = (function() {
       var thisSticky = jQuery(this),
           stickyPosition = thisSticky.data('originalPosition');
 
-      if (stickyPosition <= document_obj.scrollTop()) {        
+      if (stickyPosition <= window_obj.scrollTop()) {        
         
         var nextSticky = stickies_obj.eq(i + 1),
             nextStickyPosition = nextSticky.data('originalPosition') - thisSticky.data('originalHeight');
@@ -53,7 +53,7 @@ var stickyHeaders = (function() {
 
         thisSticky.removeClass("fixed");
 
-        if (prevSticky.length > 0 && document_obj.scrollTop() <= thisSticky.data('originalPosition') - thisSticky.data('originalHeight')) {
+        if (prevSticky.length > 0 && window_obj.scrollTop() <= thisSticky.data('originalPosition') - thisSticky.data('originalHeight')) {
 
           prevSticky.removeClass("absolute").removeAttr("style");
         }

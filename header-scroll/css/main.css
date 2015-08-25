@@ -156,14 +156,11 @@ textarea {
 
     z-index: 10;
     width: 100%;
-    top: 0px;
 }
 
 .title.fixed {
     position: fixed;
-    /*top: 0;
-    /*width: 100%;
-    z-index: 10;*/
+    top: 0;
 }
 
 .title.fixed.absolute {
@@ -183,9 +180,6 @@ textarea {
     position: absolute;
     width: 100%;
 }
-
-
-
 
 
 

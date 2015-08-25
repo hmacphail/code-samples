@@ -19,12 +19,8 @@ var stickyHeaders = (function() {
       });
 
       window_obj.on("scroll", function(e) {
-        //console.log(e);
         _whenScrolling();
       });
-      //window_obj.off("scroll.stickies").on("scroll.stickies", function() {
-      //    _whenScrolling();     
-      //});
     }
   };
 
@@ -46,7 +42,7 @@ var stickyHeaders = (function() {
         //thisSticky.css("transform", "translate(0,0)");
 
         if (nextSticky.length > 0 && thisSticky.offset().top >= nextStickyPosition) {
-          thisSticky.addClass("absolute").css("transform", "translate(0," + (nextStickyPosition - stickyPosition) + "px)");
+          thisSticky.addClass("absolute").css("transform", "translateY(" + nextStickyPosition + "px)");
         }
 
       } else {
@@ -58,11 +54,9 @@ var stickyHeaders = (function() {
         //thisSticky.css("transform", "none");
 
         if (prevSticky.length > 0 && window_obj.scrollTop() <= thisSticky.data('originalPosition') - thisSticky.data('originalHeight')
-            && window_obj.scrollTop() > prevSticky.data('originalPosition')) { //} - prevSticky.data('originalHeight')) {
+            && window_obj.scrollTop() > prevSticky.data('originalPosition')) {
           prevSticky.removeClass("absolute").removeAttr("style");
-          //css("position", "fixed").
-          //prevSticky.css("transform", "none");//"translate(0," + window.pageYOffset + "px)");
-
+          //prevSticky.css("position", "fixed").css("transform", "translateY(50%)");
         }
 
       }

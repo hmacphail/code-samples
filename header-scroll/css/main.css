@@ -153,13 +153,17 @@ textarea {
     position: relative;
     background: #fff;
     height: 100px;
+
+    z-index: 10;
+    width: 100%;
+    top: 0px;
 }
 
 .title.fixed {
     position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+    /*top: 0;
+    /*width: 100%;
+    z-index: 10;*/
 }
 
 .title.fixed.absolute {
@@ -175,7 +179,10 @@ textarea {
     font-weight: 600;
 }
 
-
+.followWrap {
+    position: absolute;
+    width: 100%;
+}
 
 
 

@@ -42,7 +42,7 @@ var stickyHeaders = (function() {
         //thisSticky.css("transform", "translate(0,0)");
 
         if (nextSticky.length > 0 && thisSticky.offset().top >= nextStickyPosition) {
-          thisSticky.addClass("absolute").css("transform", "translate(0," + nextStickyPosition + "px)");
+          thisSticky.addClass("absolute").css("transform", "translate(0," + (nextStickyPosition - stickyPosition) + "px)");
         }
 
       } else {

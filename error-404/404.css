@@ -2,7 +2,7 @@
   font-family: 'Open Sans';
   text-align: center;
   margin: 0px;
-  background-image: url('furley_bg.png');
+  background-image: url('./img/furley_bg.png');
 }
 .btn {
   padding: 6px 12px;
@@ -16,7 +16,7 @@
 }
 
 #mainDiv {
-  background-image: url('forest_bkgd.jpg');
+  background-image: url('./img/forest_bkgd.jpg');
   position: relative;
   width: 100%;
   color: #e5e5e5;

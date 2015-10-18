@@ -32,10 +32,13 @@ a:hover {
   color: #9bddf8;
 }
 
-ul, li {
+ul {
   margin: 0;
   padding: 0;
-  line-height: 30px;
+}
+li {
+  padding-bottom: 10px;
+  line-height: 20px;
   list-style-type: decimal-leading-zero;
 }
 

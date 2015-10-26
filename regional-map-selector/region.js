@@ -1,21 +1,24 @@
-
 // declare global vars
 var width = 850,
     height = 850;
 
 var chartId = "#chart-region-selector";
 
-var hasChildren = [];
+var hasChildren = ["CA", "US", "CA-BC"];
 var centered = null;
 
 var planeCenterX = width / 2;
 var planeCenterY = height / 2;
 var scale = 1;
 
+// TODO: Fix minnesota, maryland (ontario), missing states
+// Add tooltip properly
+// Make current shape label work and more visible/higher
+
 // GeoJSON file arrays
 var countries = ["canada", "usa", "mexico"];
 var provinces = ["alberta", "britishcolumbia", "manitoba", "newbrunswick", "newfoundland", "northwestterritories", "novascotia", "nunavut", "ontario", "pei", "quebec", "saskatchewan", "yukon"];
-var states = ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "conneticut", "delaware", "districtofcolumbia", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississipi", "missouri", "montana", "nebraska", "nevada", "newhampshire", "newjersey", "newmexico", "newyork", "northcarolina", "northdakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhodeisland", "southcarolina", "southdakota", "tennessee", "texas", "utah", "vermont", "virginia", "washington", "westvirginia", "wisconsin", "wyoming"];
+var states = ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "conneticut", "delaware", "districtofcolumbia", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", /*"minnesota",*/ "mississipi", "missouri", "montana", "nebraska", "nevada", "newhampshire", "newjersey", "newmexico", "newyork", "northcarolina", "northdakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhodeisland", "southcarolina", "southdakota", "tennessee", "texas", "utah", "vermont", "virginia", "washington", "westvirginia", "wisconsin", "wyoming"];
 var districts = ["alberniclayoquot", "bulkleynechako", "capitaldistrict", "cariboo", "centralcoast", "centralkootenay", "centralokanagan", "columbiashuswap", "comoxvalley", "cowichanvalley", "districtnanaimo", "eastkootenay", "fraserfortgeorge", "fraservalley", "kitimatstikine", "kootenayboundary", "metrovancouver", "mountwaddington", "northernrockies", "northokanagan", "okanagansimilkameen", "peaceriver", "powellriver", "skeenaqueencharlotte", "squamishlillooet", "stikine", "strathcona", "sunshinecoast", "thompsonnicola"];
 
 // d3 setup
@@ -66,10 +69,10 @@ var level1 = g.append("g") //provinces/states
 var level0 = g.append("g") //countries
     .attr("class", "level0");
 
-renderShapeGroup(countries, level0, 0);
+renderShapeGroup(districts, level2, 2);
 renderShapeGroup(provinces, level1, 1);
 renderShapeGroup(states, level1, 1);
-renderShapeGroup(districts, level2, 2);
+renderShapeGroup(countries, level0, 0);
 
 
 function renderShapeGroup(array, svg, level) {
@@ -86,14 +89,14 @@ function renderShape(region, path, svg, level) {
         if (error) {
             console.error(error);
         } else {
-            collection["name"] = region.name();
+            //collection["name"] = region.name();
             collection["level"] = level;
-            collection["code"] = region.regionCode();
+            //collection["code"] = region.regionCode();
 
             svg.append("path")
                 .datum(collection)
                 .attr("d", path)
-                .attr("id", region.regionCode())
+                //.attr("id", region.regionCode())
                 .attr("class", "region")
                 .attr("fill", colors[Math.floor(Math.random() * 7)])
                 .on("click", function (d) { zoom(d, self, path); })
@@ -103,8 +106,6 @@ function renderShape(region, path, svg, level) {
 }
 
 function zoom(item, self, path) {
-    console.log(item);
-    
     var x, y, k;
     var $chart = $(chartId);
     if (item) {
@@ -135,7 +136,7 @@ function zoom(item, self, path) {
         x = centroid[0];
         y = centroid[1];
 
-        self.regionLabel(self.centered.name);
+        //self.regionLabel(self.centered.name);
 
     } else {
         // background selected
@@ -144,7 +145,7 @@ function zoom(item, self, path) {
         y = height / 2;
         k = 1;
 
-        self.regionLabel("none");
+        //self.regionLabel("none");
     }
 
     // hide tooltip while transitioning
@@ -179,7 +180,7 @@ function zoom(item, self, path) {
 }
 
 function checkLowest(d, item) {
-    if (d === item && hasChildren.indexOf(d.name) == -1) {
+    if (d === item && hasChildren.indexOf(d.code) == -1) {
         return true;
     }
     return false;

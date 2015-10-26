@@ -86,14 +86,14 @@ function renderShape(region, path, svg, level) {
         if (error) {
             console.error(error);
         } else {
-            //collection["name"] = region.name();
+            collection["name"] = region.name();
             collection["level"] = level;
-            //collection["code"] = region.regionCode();
+            collection["code"] = region.regionCode();
 
             svg.append("path")
                 .datum(collection)
                 .attr("d", path)
-                //.attr("id", region.regionCode())
+                .attr("id", region.regionCode())
                 .attr("class", "region")
                 .attr("fill", colors[Math.floor(Math.random() * 7)])
                 .on("click", function (d) { zoom(d, self, path); })
@@ -103,6 +103,8 @@ function renderShape(region, path, svg, level) {
 }
 
 function zoom(item, self, path) {
+    console.log(item);
+    
     var x, y, k;
     var $chart = $(chartId);
     if (item) {
@@ -133,7 +135,7 @@ function zoom(item, self, path) {
         x = centroid[0];
         y = centroid[1];
 
-        //self.regionLabel(self.centered.name);
+        self.regionLabel(self.centered.name);
 
     } else {
         // background selected
@@ -142,7 +144,7 @@ function zoom(item, self, path) {
         y = height / 2;
         k = 1;
 
-        //self.regionLabel("none");
+        self.regionLabel("none");
     }
 
     // hide tooltip while transitioning

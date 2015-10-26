@@ -1,3 +1,33 @@
+#chart-region-selector {
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#chart-region-selector .region {
+    stroke: black;
+    position: relative;
+}
+
+#chart-region-selector .region:hover {
+    fill: #fe881e;
+}
+
+#chart-region-selector .background {
+    fill: none;
+    pointer-events: all;
+}
+
+#chart-region-selector .lowest {
+    fill: #424b55 !important;
+    display: block !important;
+}
+
+#chart-region-selector .active {
+    display: none;
+}
+
+/*
 @import "../-variables";
 @import "../../bootstrap-source/less/variables";
 @import "../../bootstrap-source/less/mixins.less";
@@ -31,3 +61,4 @@
         }
     }
 }
+*/

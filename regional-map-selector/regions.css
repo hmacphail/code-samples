@@ -1,3 +1,8 @@
+body {
+    font-family: 'Arial';
+    font-size: 14px;
+}
+
 #chart-region-selector {
     float: left;
     border: 1px solid #ccc;
@@ -25,4 +30,31 @@
 
 #chart-region-selector .active {
     display: none;
+}
+
+/*.tooltip {
+    position: absolute;
+}*/
+
+.tooltip {
+    position: absolute;
+    background: #888;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    opacity: 0;
+}
+.tooltip-arrow {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #888;
+    border-width: 10px;
+    margin-left: -10px;
 }

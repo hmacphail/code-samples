@@ -1,8 +1,9 @@
 // declare global vars
 var width = 850,
-    height = 850;
+    height = 700;
 
 var chartId = "#chart-region-selector";
+var regionLabel = "#current-region-label";
 
 var hasChildren = ["CA", "US", "CA-BC"];
 var centered = null;
@@ -26,15 +27,11 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-var projection = d3.geo.albers()
-    .scale(600)
-    .translate([width, height]);
-
 var d3Chart = d3.select(chartId);
 var svg = d3Chart.append("svg")
     .attr("width", width)
     .attr("height", height);
- 
+
 // tooltip for hover over regions
 var tag = d3Chart.append("div")
     .attr("class", "tooltip top");
@@ -44,7 +41,7 @@ tag.append("div").attr("class", "tooltip-inner");
 // map projection and path
 var projection = d3.geo.albers()
     .scale(600)
-    .translate([width / 2, height / 2]);
+    .translate([width / 2, height/(1.6)]);
 
 var path = d3.geo.path().projection(projection);
 
@@ -112,7 +109,7 @@ function zoom(item, self, path) {
         if (centered !== item) {
             k = 1.75 * (item.level + 1);
             centered = item;
-            
+
             // render next step down (because hidden on initial draw)
             $chart.find(".level" + (item.level + 1)).attr("display", "");
         } else {
@@ -136,7 +133,7 @@ function zoom(item, self, path) {
         x = centroid[0];
         y = centroid[1];
 
-        //self.regionLabel(self.centered.name);
+        $(regionLabel).html(self.centered.name);
 
     } else {
         // background selected
@@ -145,7 +142,7 @@ function zoom(item, self, path) {
         y = height / 2;
         k = 1;
 
-        //self.regionLabel("none");
+        $(regionLabel).html("none");
     }
 
     // hide tooltip while transitioning
@@ -214,8 +211,8 @@ function tooltip(d, path) {
     var yDist = y - planeCenterY;
 
     // position tooltip
-    var transformX = (xDist * scale) + (height / 2);
-    var transformY = (yDist * scale) + (width / 2);
+    var transformX = (xDist * scale) + (width / 2);
+    var transformY = (yDist * scale) + (height / (1.75));
 
     if (transformX < 0) transformX = 0;
     if (transformY < 0) transformY = 0;

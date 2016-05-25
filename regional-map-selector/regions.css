@@ -3,6 +3,16 @@ body {
     font-size: 14px;
 }
 
+#chart-region-label {
+    position: absolute;
+    top: 670px;
+    left: 20px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    background: #eee;
+}
+
 #chart-region-selector {
     float: left;
     border: 1px solid #ccc;
@@ -32,16 +42,12 @@ body {
     display: none;
 }
 
-/*.tooltip {
-    position: absolute;
-}*/
-
 .tooltip {
     position: absolute;
-    background: #888;
+    background: #ccc;
     padding: 5px 10px;
     border-radius: 3px;
-    color: #fff;
+    color: #000;
     opacity: 0;
 }
 .tooltip-arrow {
@@ -54,7 +60,7 @@ body {
     position: absolute;
     pointer-events: none;
     border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: #888;
+    border-bottom-color: #ccc;
     border-width: 10px;
     margin-left: -10px;
 }
